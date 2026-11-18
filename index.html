@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f1e8">
+  <title>Soft Sound — Music Player</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="masthead"><a href="./" aria-label="Soft Sound home">soft sound<span class="brand-dot">®</span></a><span>A LITTLE SPACE TO LISTEN</span></header>
+  <main>
+    <section class="player" aria-label="Music player">
+      <div class="eyebrow"><span class="playing-indicator" aria-hidden="true"></span><span id="status">READY WHEN YOU ARE</span></div>
+      <div class="cover-wrap"><img id="cover" src="assets/covers/slow-morning.svg" alt="Abstract orange sun album artwork" width="800" height="800"><span class="cover-label">SOFT SOUND RECORDINGS</span></div>
+      <div class="song-heading"><div><h1 id="title">Slow Morning</h1><p id="artist">Sunday Studio</p></div><span id="track-number">01 / 03</span></div>
+      <div class="timeline"><input id="progress" type="range" min="0" max="100" step="0.1" value="0" aria-label="Song progress"><div class="times"><span id="current-time">0:00</span><span id="duration">0:00</span></div></div>
+      <div class="transport">
+        <button id="previous" class="icon-button" aria-label="Previous song"><svg viewBox="0 0 24 24"><path d="M5 5v14M19 5 8 12l11 7Z"/></svg></button>
+        <button id="play" class="play-button" aria-label="Play"><svg id="play-icon" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z"/></svg><svg id="pause-icon" viewBox="0 0 24 24" hidden><path d="M8 5v14M16 5v14"/></svg></button>
+        <button id="next" class="icon-button" aria-label="Next song"><svg viewBox="0 0 24 24"><path d="M19 5v14M5 5l11 7-11 7Z"/></svg></button>
+      </div>
+      <div class="volume"><button id="mute" class="icon-button" aria-label="Mute"><svg viewBox="0 0 24 24"><path d="m11 5-6 4H2v6h3l6 4ZM16 8c3 2 3 6 0 8M19 5c5 4 5 10 0 14"/></svg></button><input id="volume" type="range" min="0" max="1" step="0.01" value="0.7" aria-label="Volume"><span id="volume-value">70%</span></div>
+      <div class="track-list" aria-label="Choose a song">
+        <button class="track active" data-track="0" aria-current="true"><span class="track-index">01</span><span>Slow Morning<small>Sunday Studio</small></span><span class="track-state">SELECTED</span></button>
+        <button class="track" data-track="1"><span class="track-index">02</span><span>After the Rain<small>Stillwater</small></span><span class="track-state"></span></button>
+        <button class="track" data-track="2"><span class="track-index">03</span><span>Golden Hour<small>Low Tide</small></span><span class="track-state"></span></button>
+      </div>
+      <p id="error" role="alert" hidden></p>
+      <audio id="audio" preload="metadata" src="assets/audio/slow-morning.wav"></audio>
+    </section>
+  </main>
+  <footer>TAKE A BREATH. PRESS PLAY.<span>THREE TRACKS. NO RUSH.</span></footer>
+</body>
+</html>
